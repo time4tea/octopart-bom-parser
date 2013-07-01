@@ -35,9 +35,6 @@ class Octopart:
         params = urllib.urlencode(parameters)
         url = urljoin(self._baseuri, path)
 
-        print url
-        print params
-
         response = urllib.urlopen("%s?%s" % (url, params))
         if response.getcode() != 200:
             raise IOError("Unable to comply... code=" + str(response.getcode()) + ": " + str(response.info()))
